@@ -309,8 +309,10 @@ int StereoVision::calibrateStereo(int nx, int ny, int n_boards, float squareSize
             //Path donde están los archivos de calibración
             std::string home_path(pPath);
 
-            camera_calibration_parsers::writeCalibrationYml(home_path+"/right_camera_calibration_result.yml", std::string("right_camera"), right_info);
-            camera_calibration_parsers::writeCalibrationYml(home_path+"/left_camera_calibration_result.yml", std::string("left_camera"), left_info);
+            //camera_calibration_parsers::writeCalibrationYml(home_path+"/right_camera_calibration_result.yml", std::string("right_camera"), right_info);
+            camera_calibration_parsers::writeCalibrationYml(home_path+"/.ros/camera_info/right_camera.yaml", std::string("right_camera"), right_info);
+            //camera_calibration_parsers::writeCalibrationYml(home_path+"/left_camera_calibration_result.yml", std::string("left_camera"), left_info);
+            camera_calibration_parsers::writeCalibrationYml(home_path+"/.ros/camera_info/left_camera.yaml", std::string("left_camera"), left_info);
       }
 
 
