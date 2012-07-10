@@ -41,6 +41,8 @@ int main(int argc, char **argv)
   nh.param("boards_number", n_boards, 9);
   nh.param("square_dimension", square_dimension, 1.0);
 
+  system("mkdir -p ~/.ros/camera_info");
+
   StereoVision stereoV;
   stereoV.calibrateStereo(board_w,board_h,n_boards,(float)square_dimension);
   
